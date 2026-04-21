@@ -212,6 +212,7 @@
       <div class="section-title light">Customer Details</div>
       <div class="section-body">
         <div class="field"><label>Name</label><input type="text" id="cust-name" placeholder="Full name" autocomplete="name"></div>
+        <div class="field"><label>Customer VAT Number</label><input type="text" id="cust-vat" placeholder="VAT number (if applicable)"></div>
         <div class="field"><label>Phone</label><input type="tel" id="cust-phone" placeholder="+27" inputmode="tel"></div>
         <div class="field"><label>Email</label><input type="email" id="cust-email" placeholder="email@example.com" inputmode="email"></div>
         <div class="field"><label>Address</label><textarea id="cust-address" placeholder="Street, City" rows="2"></textarea></div>
@@ -383,6 +384,7 @@ function showPreview() {
   const salesman = document.getElementById('inv-salesman').value || '—';
   const name = document.getElementById('cust-name').value || '—';
   const phone = document.getElementById('cust-phone').value || '—';
+  const custVAT = document.getElementById('cust-vat').value;
   const email = document.getElementById('cust-email').value || '—';
   const address = document.getElementById('cust-address').value || '—';
 
@@ -410,7 +412,7 @@ function showPreview() {
       <div class="prev-header-right">
         <strong>ABC AUTO PARTS</strong>
         NEW & USED VW + AUDI PARTS<br>
-        57 Hytor St / 6 Norwalk Rd, Chloorkop<br>
+        6 Norwalk Rd, Chloorkop<br>
         Tel: (011) 976-5531/2<br>
         VAT: 4450219458 | CK: 2016/293654/07
       </div>
@@ -425,6 +427,7 @@ function showPreview() {
       <div class="prev-billto-head">BILL TO</div>
       <div class="prev-billto-body">
         <strong>${name}</strong><br>
+        ${custVAT ? '<strong>VAT: </strong>' + custVAT + '<br>' : ''}
         ${phone} &nbsp;·&nbsp; ${email}<br>
         ${address}
       </div>
